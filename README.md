@@ -1,2 +1,2 @@
 # AI-IoT-Traffic_light
-AI based traffic light controlled by ardino UNO 
+project I bulid for my fellow classmate
