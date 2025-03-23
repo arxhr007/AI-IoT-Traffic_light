@@ -12,7 +12,6 @@ model = YOLO("yolov8m.pt")
 CAMERA_URL = "http://192.168.1.4:8080/video"  
 
 def capture_frame():
-    """Capture a frame from the camera"""
     cap = cv2.VideoCapture(CAMERA_URL)
     time.sleep(1)  
     ret, frame = cap.read()
@@ -23,7 +22,6 @@ def capture_frame():
     return frame
 
 def detect_and_count_objects(frame):
-    """Run YOLO detection, count objects, and draw bounding boxes"""
     if frame is None:
         return 0, None
     results = model(frame)
@@ -42,7 +40,6 @@ def detect_and_count_objects(frame):
     return object_count, frame
 
 def send_command(command):
-    """Send command to Arduino"""
     ser.write(command.encode())  
     time.sleep(0.1)
 
